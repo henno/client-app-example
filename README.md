@@ -5,6 +5,7 @@ Pivotal Tracker: https://www.pivotaltracker.com/n/projects/2594006
 This project is a client application for reqres.in REST API and is meant to demonstrate how to develop client 
 applications for REST APIs from the scratch.
 
+
 How to:
 1. Create a project in Pivotal Tracker
 2. Create a repo in version control system (Github, Bitbucket, Gitlab)
