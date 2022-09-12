@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ReqRes.in client</title>
+</head>
+<body>
+<div id="app">
+    <table border="1" id="usersTable">
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Avatar</th>
+        </tr>
+    </table>
+</div>
+<script>
+
+    const xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", 'https://reqres.in/api/users', false); // false for synchronous request
+    xmlHttp.send(null);
+    data = JSON.parse(xmlHttp.responseText).data
+    console.log(data)
+    const table = document.getElementById("usersTable")
+    data.forEach(user => {
+        const newTr = document.createElement("tr")
+        Object.values(user).forEach(val => {
+            let td = document.createElement("td")
+            td.innerHTML = val
+            newTr.appendChild(td)
+        })
+        table.appendChild(newTr)
+    });
+
+</script>
+</body>
+</html>
